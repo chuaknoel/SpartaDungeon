@@ -1,4 +1,4 @@
-﻿namespace SpartaDungeon
+﻿namespace CoadingDungeon
 {
 
     interface UserInterface
