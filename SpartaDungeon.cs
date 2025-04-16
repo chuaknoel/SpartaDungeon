@@ -1,4 +1,4 @@
-﻿namespace CoadingDungeon
+﻿namespace CodingDungeon
 {
 
     interface UserInterface
