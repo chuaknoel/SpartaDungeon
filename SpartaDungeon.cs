@@ -1,13 +1,6 @@
-﻿namespace CodingDungeon
+
 {
 
-    interface UserInterface
-    {
-        // - 사용자 입력 처리 메서드 (메뉴 선택, 아이템 선택 등)
-        // - 게임 상태 출력 메서드 (플레이어 정보, 인벤토리, 상점 등)
-        // - 게임 진행 상태 표시 메서드 (현재 위치, 진행 단계 등)
-        // - 사용자 피드백 메서드 (성공/실패 메시지 등)
-    }
     class Player
     {
         public string Name { get; private set; }
@@ -41,6 +34,11 @@
                     Attack = 12;
                     Defense = 8;
                     Health = 90;
+                    break;
+                case "육군 아미타이거":
+                    Attack = 200;
+                    Defense = 100;
+                    Health = 1200;
                     break;
                 default:
                     Attack = 100;
@@ -444,6 +442,9 @@
             {
                 Console.Clear();
                 Console.WriteLine("작업을 마치고 돌아온다. 전초기지는 인적없이 조용하다.");
+                Console.WriteLine("뭔가. 상점들은 열려있으나, 주인외에 사람은 아무도 없다.");
+                Console.WriteLine("이질적인 감각에도 불구하고, 안전하다는 생각이 든다.");
+                Console.WriteLine("");
                 Console.WriteLine("===== 스파르타 던전 메인 메뉴 =====");
                 Console.WriteLine("1. 상태 보기");
                 Console.WriteLine("2. 인벤토리");
