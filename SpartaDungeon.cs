@@ -503,7 +503,9 @@
                 isValid = isValid && input >= min && input <= max;
 
                 if (!isValid)
+                {
                     Console.WriteLine($"잘못된 입력입니다. {min}에서 {max} 사이의 값을 입력하세요.");
+                }
 
             } while (!isValid);
 
