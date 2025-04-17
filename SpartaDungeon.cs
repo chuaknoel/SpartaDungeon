@@ -356,7 +356,7 @@ public void BuyItem(Item item, Inventory inventory)
     inventory.UseGold(item.Price);
     inventory.AddItem(boughtItem);
 
-    // 여기에 상점 목록에서 아이템 제거하는 코드 추가
+    // 상점 목록에서 아이템 제거하는 코드 추가
     items.Remove(item);
 
     Console.WriteLine($"{item.Name}을(를) {item.Price}G에 구매했습니다.");
