@@ -331,34 +331,36 @@
             }
         }
 
-        // 아이템 구매 메서드
-        public void BuyItem(Item item, Inventory inventory)
-        {
-            // 인벤토리에 충분한 골드가 있는지 확인
-            if (inventory.Gold < item.Price)
-            {
-                Console.WriteLine("골드가 부족합니다!");
-                return;
-            }
+// 아이템 구매 메서드 
+public void BuyItem(Item item, Inventory inventory)
+{
+    // 인벤토리에 충분한 골드가 있는지 확인
+    if (inventory.Gold < item.Price)
+    {
+        Console.WriteLine("골드가 부족합니다!");
+        return;
+    }
 
-            // 아이템 복사본 생성 (상점 아이템은 그대로 두고 복사본을 구매)
-            Item boughtItem = new Item(
-                item.Name,
-                item.Description,
-                item.Price,
-                item.Type,
-                item.AttackBonus,
-                item.DefenseBonus,
-                item.HealthBonus
-            );
+    // 아이템 복사본 생성 (상점 아이템은 그대로 두고 복사본을 구매)
+    Item boughtItem = new Item(
+        item.Name,
+        item.Description,
+        item.Price,
+        item.Type,
+        item.AttackBonus,
+        item.DefenseBonus,
+        item.HealthBonus
+    );
 
-            // 인벤토리에 아이템 추가 및 골드 차감
-            inventory.UseGold(item.Price);
-            inventory.AddItem(boughtItem);
+    // 인벤토리에 아이템 추가 및 골드 차감
+    inventory.UseGold(item.Price);
+    inventory.AddItem(boughtItem);
 
-            Console.WriteLine($"{item.Name}을(를) {item.Price}G에 구매했습니다.");
-        }
+    // 여기에 상점 목록에서 아이템 제거하는 코드 추가
+    items.Remove(item);
 
+    Console.WriteLine($"{item.Name}을(를) {item.Price}G에 구매했습니다.");
+}
         // 아이템 판매 메서드
         public void SellItem(Item item, Inventory inventory, Player player)
         {
